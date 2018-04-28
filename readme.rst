@@ -1,3 +1,15 @@
+How To
+Install XAMPP
+Start Apache and MySQL
+Open phpMyAdmin, make a database named makeupbliss
+Import the database (.sql) file to the database
+Open the web with 
+localhost/makeupbliss/index.php/ControllerName/MethodName
+e.g
+*********************************************************************************************
+http://localhost/makeupbliss/index.php/TestView/home
+*********************************************************************************************
+
 ###################
 What is CodeIgniter
 ###################
