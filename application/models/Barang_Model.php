@@ -44,6 +44,19 @@ class Barang_Model extends CI_Model {
 		return $query->result();
 	}
 
+	public function get_based_category($id)
+	{
+		$this->db->select('*');
+		$this->db->from('barang');
+		$this->db->join('kategori','barang.kategori = kategori.id_kategori');
+		$this->db->where('kategori.id_kategori', $id);
+		// $query = $this->db->get();
+		$query = $this->db->get();
+		
+			return $query->result();
+			
+	}
+
 }
 
 /* End of file  */

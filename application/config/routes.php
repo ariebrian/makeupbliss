@@ -52,3 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['home'] = 'Barang/get_new';
+$route['product/(:num)'] = 'Barang/get_one/$1';
+$route['category/(:num)'] = 'Barang/get_based_category/$1';

@@ -42,6 +42,21 @@ class Barang extends CI_Controller {
 		$this->load->view('detail',$data);
 	}
 
+	public function get_based_category($id)
+	{
+		// die();
+		
+		// $data = array('barang' => $this->Barang_Model->get_based_category($id) , );
+		$data['cat'] = $this->Barang_Model->get_based_category($id);
+		// echo "<pre>";
+		// var_dump($id);
+		// var_dump($data);
+		// echo "</pre>";
+		// die();
+		$this->load->view('header');
+		$this->load->view('category',$data);
+	}
+
 }
 
 /* End of file  */

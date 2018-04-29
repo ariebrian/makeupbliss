@@ -36,6 +36,12 @@ class TestView extends CI_Controller {
 		$this->load->view('register');
 	}
 
+	public function cat()
+	{
+		$this->load->view('header');
+		$this->load->view('category');
+	}
+
 	public function lala()
 	{
 		echo base_url();
