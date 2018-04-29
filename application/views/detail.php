@@ -13,11 +13,12 @@
 				<img src="<?php echo base_url(); ?>assets/img/logo.jpg" alt="">
 			</div>
 			<div class="col-md-8" style="background-color: white;">
-				<h5 style="text-align: center; margin-top: 20px;">Barang 1</h5>
+				<h5 style="text-align: center; margin-top: 20px;"><?php echo $barang[0]->nama_barang; ?></h5>
 				<br>
 				<div class="row">
-					<div class="col-md-7">	
-						<h6 style="color: #c83349">Rp 100.000,00</h6>
+					<div class="col-md-7">
+
+						<h6 style="color: #c83349">Rp <?php echo number_format($barang[0]->harga,2,",","."); ?></h6>
 					</div>
 					<div class="col-md-2">
 						<button class="btn btn-danger" style="width: 100%; height: 80%">Wishlist</button>
@@ -27,7 +28,9 @@
 					</div>
 				</div>
 				<hr>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. In voluptates, ut officia quas voluptatibus nemo, esse maxime, earum harum facere omnis amet. Aspernatur ea placeat reprehenderit alias sint quae nemo.
+				<?php echo $barang[0]->nama_kategori ?>
+				<hr>
+				<?php echo $barang[0]->deskripsi ?>
 			</div>
 		</div>
 	</div>

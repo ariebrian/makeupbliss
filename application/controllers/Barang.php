@@ -16,10 +16,15 @@ class Barang extends CI_Controller {
 	public function get_new()
 	{
 		$data['barang'] = $this->Barang_Model->get_new_barang();
-		echo "<pre>";
-		var_dump($data);
-		die();
-		echo "</pre>";
+		$front_data = array('barang' => $this->Barang_Model->get_new_barang(), 
+							'category' => $this->Barang_Model->get_kategori(),
+						);
+		// echo "<pre>";
+		// var_dump($front_data);
+		// die();
+		// echo "</pre>";
+		$this->load->view('header');
+		$this->load->view('front',$front_data);
 	}
 
 	public function get_one($id)
@@ -30,9 +35,11 @@ class Barang extends CI_Controller {
 			$data = array('barang' => $this->Barang_Model->get_one($id) , );
 		}
 		// echo "<pre>";
-		var_dump($data);
+		// var_dump($data);
 		// echo "</pre>";
-		die();
+		// die();
+		$this->load->view('header');
+		$this->load->view('detail',$data);
 	}
 
 }
