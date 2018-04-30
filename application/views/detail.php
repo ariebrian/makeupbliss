@@ -1,3 +1,6 @@
+<?php $this->load->helper('form'); ?>
+<?php $id = end($this->uri->segments); ?>
+<?php //var_dump($id);die(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +27,10 @@
 						<button class="btn btn-danger" style="width: 100%; height: 80%">Wishlist</button>
 					</div>
 					<div class="col-md-3">
-						<button class="btn btn-danger" style="width: 100%; height: 80%">Beli Sekarang</button>
+						<a href="<?php echo base_url('index.php/Barang/add_cart/'.$barang[0]->id_brg) ?>">
+							
+							<button class="btn btn-danger" name="id" type="submit" style="width: 100%; height: 80%">Beli Sekarang</button>
+						</a>
 					</div>
 				</div>
 				<hr>

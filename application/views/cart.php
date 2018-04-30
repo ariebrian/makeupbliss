@@ -8,23 +8,26 @@
 </head>
 <body style="background-color: #f5f5f5">
 	<div class="container" style="margin-top:5px;	">
-		<div class="content-full">
+		<div class="content-full>
 			<p class="content-header">Cart</p>
-			<div class="row" style="background-color: white">
-				<ul class="navmainlist" style="">
-					  <li class="navlist"><a href="#"><img src="<?php echo base_url(); ?>assets/img/logo.jpg" width="150px" height="150px" alt=""></a></li>
-					  <li class="navlist"><a href="#">About</a></li>
-				</ul>
-				<ul class="navmainlist">
-					<li class="navlistright"><a href="#">Register</a></li>
-					<li class="navlistright"><a href="login.html">Login</a></li>
-					<li class="navlistright">
-						
-						<button type="submit" class="btn btn-danger" >Hapus</button>
-					</li>
-				</ul>
-						
-			</div>
+			<?php foreach ($cart as $go): ?>
+				
+				<div class="row" style="background-color: white; padding-left: 165px; padding-top: 20px;">
+					<ul class="navmainlist" style="">
+						  <li class="navlist"><a href="#"><img src="<?php echo base_url(); ?>assets/img/logo.jpg" width="150px" height="150px" alt=""></a></li>
+						  <li class="navlist"><a href="#"><?php echo $go->nama_barang ?></a></li>
+					</ul>
+					<ul class="navmainlist">
+						<li class="navlistright"><a href="#"><?php echo $go->qty ?></a></li>
+						<li class="navlistright"><a href="login.html"><?php echo $go->harga ?></a></li>
+						<li class="navlistright">
+							
+							<button type="submit" class="btn btn-danger" >Hapus</button>
+						</li>
+					</ul>
+							
+				</div>
+			<?php endforeach ?>
 		</div>
 	
 	</div>

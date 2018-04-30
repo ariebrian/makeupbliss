@@ -1,3 +1,8 @@
+<!-- <?php 
+// var_dump($_SESSION['username']);
+// die(); 
+?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,15 +29,43 @@
 	
 
 	 <!-- navbar -->
-	<nav class="navbar navbar-collapse" style="background-color: #F8BBD0;">
-		<ul class="navmainlist" style="">
-			  <li class="navlist"><a href="<?php echo base_url(); ?>index.php/home">Home</a></li>
-			  <li class="navlist"><a href="#">About</a></li>
-		</ul>
-		<ul class="navmainlist">
-			<li class="navlistright"><a href="<?php echo base_url(); ?>index.php/register">Register</a></li>
-			<li class="navlistright"><a href="<?php echo base_url(); ?>index.php/login">Login</a></li>
-		</ul>
+	<nav class=" ?>navbar navbar-collapse" style="background-color: #F8BBD0;">
+			<div class="row">
+				<div class="col-md-3">
+					<ul class="navmainlist" >
+						  <li class="navlist"><a href="<?php echo base_url(); ?>index.php/home">Home</a></li>
+						  <li class="navlist"><a href="#">About</a></li>
+					</ul>
+				</div>
+				<div class="col-md-5"></div>
+		<?php if (isset($_SESSION['username'])): ?>
+				<div class="col-md-4">
+						
+					<ul class="navmainlist" style="float: right;">
+						<li class="navlistright"><a href="#"><?php echo $_SESSION['username']; ?></a></li>
+						<li class="navlistright">
+							<button type="submit" class="btn btn-danger">
+								Logout
+							</button>
+						</li>
+						<li class="navlistright">
+							<a href="<?php echo base_url('index.php/cart/'.$_SESSION['id_user']); ?>">
+								Cart
+							</a>
+						</li>
+					</ul>
+				</div>
+		<?php else: ?>
+				<div class="col-md-4">
+					<ul class="navmainlist" >
+						<li class="navlistright"><a href="<?php echo base_url(); ?>index.php/register">Register</a></li>
+						<li class="navlistright"><a href="<?php echo base_url(); ?>index.php/login">Login</a></li>
+					</ul>
+					
+				</div>
+		<?php endif ?>
+			</div>
+	
 	</nav>
 
 	<br>

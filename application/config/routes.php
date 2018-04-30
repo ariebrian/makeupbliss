@@ -58,3 +58,4 @@ $route['product/(:num)'] = 'Barang/get_one/$1';
 $route['category/(:num)'] = 'Barang/get_based_category/$1';
 $route['login'] = 'User/log';
 $route['register'] = 'User/reg';
+$route['cart/(:num)'] = 'Barang/get_cart/$1';

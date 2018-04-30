@@ -1,14 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+	
 class Barang extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		// $this->load->library('form_validation');
-		// $this->load->library('session');
+		$this->load->library('session');
 		$this->load->helper('url');
-		// $this->load->helper('form');
+		$this->load->helper('form');
 		// $this->load->helper('date');
 		$this->load->model('Barang_Model');
 	}
@@ -56,6 +56,44 @@ class Barang extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('category',$data);
 	}
+
+	public function get_cart($id)
+	{
+		$data['cart'] = $this->Barang_Model->get_cart($id);
+		// echo "<pre>";
+		// print_r ($data);
+		// die();
+		// echo "</pre>";
+		$this->load->view('header');
+		$this->load->view('cart', $data);
+	}
+
+	public function add_cart($id)
+	{
+		// $id = $this->input->post('id');
+		$cart_data = $this->Barang_Model->get_one($id);
+		// echo "<pre>";
+		// var_dump ($cart_data);
+		// die();
+		// echo "</pre>";
+		$cart = array('id_user' => $this->session->userdata('id_user'),
+						'id_barang' => $cart_data[0]->id_brg,
+						'qty' => 1,
+				);
+		// echo "<pre>";
+		// print_r ($cart);
+		// die();
+		// echo "</pre>";
+		$data = array('barang' => $this->Barang_Model->get_one($id) , );
+		// var_dump($data);
+		// die();
+		$this->Barang_Model->add_cart($cart);
+		// redirect('detail',$data);
+		$this->load->view('header');
+		$this->load->view('detail', $data);
+	}
+
+	
 
 }
 

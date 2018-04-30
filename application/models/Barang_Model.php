@@ -16,7 +16,7 @@ class Barang_Model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('barang');
 		$this->db->join('kategori', 'barang.kategori = kategori.id_kategori');
-		$this->db->order_by('id_brg', 'desc');
+	$this->db->order_by('id_brg', 'desc');
 		$this->db->limit(6);
 		$query = $this->db->get();
 		return $query->result();
@@ -58,6 +58,23 @@ class Barang_Model extends CI_Model {
 			return $query->result();
 			
 	}
+
+	public function add_cart($data)
+	{
+		$this->db->insert('cart',$data);
+	}
+	public function get_cart($id_user)
+	{
+		$this->db->select('*');
+		$this->db->from('cart');
+		$this->db->join('barang', 'barang.id_brg = cart.id_barang');
+		$this->db->join('user', 'user.id_user = cart.id_user');
+		$this->db->where('cart.id_user',$id_user);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+
 
 }
 
