@@ -1,3 +1,4 @@
+<?php $this->load->helper('form'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +13,11 @@
 	<div class="container">
 		<div class="jumbotron" style="background-color: #F8BBD0;">
 			<center>
-				<h5>Masuk ke Toko Kami!</h5>
+				<h5>Daftar ke Toko Kami!</h5>
 				<hr>
 			</center>
-				<form action="#">
+				<?php echo form_open('User/register'); ?>
+				<form action="#" method="post">
 					<div class="form-group">
 						<div class="row">
 							<div class="col-md-4">
@@ -78,7 +80,7 @@
 							<div class="col-md-6">
 							</div>
 							<div class="col-md-3">
-								<button type="button" class="btn btn-danger" style="width: 63%">Register</button>
+								<button type="submit" class="btn btn-danger" style="width: 63%">Register</button>
 							</div>
 						</div>
 						<div class="row">
@@ -92,6 +94,7 @@
 						</div>
 					</div>
 				</form>
+				<?php echo form_close(); ?>
 		</div>
 	</div>
 </body>
