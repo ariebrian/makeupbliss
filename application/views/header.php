@@ -11,7 +11,7 @@
 	<nav class="navbar navbar-default" style="background-color: #d69cb0;">
 		
 		<div class="container-fluid" style="padding-left: 25px;">
-			<a href="#" class="navbar-brand" style="color: #c83349;">
+			<a href="<?php echo base_url(); ?>index.php/home" class="navbar-brand" style="color: #c83349;">
 				<img src="<?php echo base_url(); ?>assets/img/logo.jpg" width="60" height="60" class="d-inline-block align-center" alt="">
 				MAKEUPBLISS.ID
 			</a>
@@ -26,12 +26,12 @@
 	 <!-- navbar -->
 	<nav class="navbar navbar-collapse" style="background-color: #F8BBD0;">
 		<ul class="navmainlist" style="">
-			  <li class="navlist"><a href="#">Home</a></li>
+			  <li class="navlist"><a href="<?php echo base_url(); ?>index.php/home">Home</a></li>
 			  <li class="navlist"><a href="#">About</a></li>
 		</ul>
 		<ul class="navmainlist">
-			<li class="navlistright"><a href="#">Register</a></li>
-			<li class="navlistright"><a href="login.html">Login</a></li>
+			<li class="navlistright"><a href="<?php echo base_url(); ?>index.php/register">Register</a></li>
+			<li class="navlistright"><a href="<?php echo base_url(); ?>index.php/login">Login</a></li>
 		</ul>
 	</nav>
 

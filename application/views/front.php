@@ -31,7 +31,7 @@
 					<?php foreach ($category as $cat) { ?>
 						
 					<div class="col-md-2" style=" border-left: solid;border-width: 1px; ">
-						<a href="#" style="text-decoration: none;">
+						<a href="<?php echo base_url().'index.php/category/'.$cat->id_kategori; ?>" style="text-decoration: none;">
 							<center>
 								<img class="img-responsive" style="padding-top: 5px;" src="<?php echo base_url(); ?>assets/img/logo.jpg" width="50%" height="50%" alt="">
 								<br>
@@ -57,7 +57,7 @@
 					<?php foreach ($barang as $new) { ?>
 						
 						<div class="col-md-2">
-							<a href="#" style="text-decoration: none;">
+							<a href="<?php echo base_url().'index.php/product/'.$new->id_brg; ?>" style="text-decoration: none;">
 								<div class="card">	
 									<center>
 										<img class="card-img-top" style="padding-top: 5px;" src="<?php echo base_url(); ?>assets/img/logo.jpg" width="50%" height="50%" alt="">

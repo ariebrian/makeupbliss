@@ -22,7 +22,7 @@
 					<?php foreach ($cat as $kat) { ?>
 						
 						<div class="col-md-2">
-							<a href="#" style="text-decoration: none;">
+							<a href="<?php echo base_url().'index.php/product/'.$kat->id_brg; ?>" style="text-decoration: none;">
 								<div class="card">	
 									<center>
 										<img class="card-img-top" style="padding-top: 5px;" src="<?php echo base_url(); ?>assets/img/logo.jpg" width="50%" height="50%" alt="">
