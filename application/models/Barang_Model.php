@@ -16,6 +16,8 @@ class Barang_Model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('barang');
 		$this->db->join('kategori', 'barang.kategori = kategori.id_kategori');
+		$this->db->order_by('id_brg', 'desc');
+		$this->db->limit(6);
 		$query = $this->db->get();
 		return $query->result();
 	}

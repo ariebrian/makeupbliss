@@ -34,12 +34,14 @@
 								</div>
 							</a>
 						</div>
+						<hr>
 					<?php } ?>
 					
 
 				</div>
+				<br>
 			</div>
-
+			<br>
 		</div>
 		
 	</div>
