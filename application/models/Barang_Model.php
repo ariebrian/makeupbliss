@@ -11,6 +11,11 @@ class Barang_Model extends CI_Model {
 
 	}
 
+	public function add_barang($data)
+	{
+		$this->db->insert('barang',$data);
+	}
+
 	public function get_new_barang()
 	{
 		$this->db->select('*');

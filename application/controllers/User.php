@@ -24,6 +24,12 @@ class User extends CI_Controller {
 		$this->load->view('register');
 	}
 
+    public function adm()
+    {
+        $this->load->view('header');
+        $this->load->view('admin');
+    }
+
 	public function login()
 	{
 		$data = array(
@@ -56,13 +62,19 @@ class User extends CI_Controller {
                     // echo "</pre>";
                     // Add user data in session
                     $this->session->set_userdata($session_data);
-                    redirect('home');
+                    if ($this->session->userdata('username')=='admin') {
+                    	redirect('admin');
+                    }
+                    else{
+
+                    	redirect('home');
+                    }
                 }   
                 else {
                 $data = array('message_display' => 'Nama Pengguna atau Password Salah');
                 
                 $this->session->set_userdata( $data );
-                redirect('product/1');
+                redirect('product/login');
             	}
         	}
 	}

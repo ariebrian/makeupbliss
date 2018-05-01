@@ -48,6 +48,18 @@ class TestView extends CI_Controller {
 		$this->load->view('cart');
 	}
 
+	public function admin()
+	{
+		$this->load->view('header');
+		$this->load->view('admin');
+	}
+
+	public function insert()
+	{
+		$this->load->view('header');
+		$this->load->view('insert');
+	}
+
 	public function lala()
 	{
 		echo base_url();

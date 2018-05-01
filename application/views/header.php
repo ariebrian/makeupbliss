@@ -48,11 +48,19 @@
 								Logout
 							</button>
 						</li>
+						<?php if ($_SESSION['username'] == 'admin') : ?>
+							<li class="navlistright">
+							<a href="<?php echo base_url('index.php/admin'); ?>">
+								Admin Page
+							</a>
+						</li>	
+						<?php else: ?>
 						<li class="navlistright">
 							<a href="<?php echo base_url('index.php/cart/'.$_SESSION['id_user']); ?>">
 								Cart
 							</a>
 						</li>
+					<?php endif ?>
 					</ul>
 				</div>
 		<?php else: ?>

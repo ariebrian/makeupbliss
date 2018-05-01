@@ -8,8 +8,21 @@
 </head>
 <body style="background-color: #f5f5f5">
 	<div class="container" style="margin-top:5px;	">
-		<div class="content-full>
+		<div class="content-full">
 			<p class="content-header">Cart</p>
+				<div class="row" style="background-color: white; padding-left: 165px; padding-top: 20px;">
+					<ul class="navmainlist" style="">
+						  <li class="navlist" style="padding-right: 50px;"><a href="#">Foto Barang</li>
+						  <li class="navlist" style="padding-bottom: 30px;"><a href="#">Nama Barang</a></li>
+					</ul>
+					<ul class="navmainlist">
+						<li class="navlistright"><a href="#">Qty</a></li>
+						<li class="navlistright"><a href="login.html">Harga</a></li>
+						
+					</ul>
+							
+				</div>
+				<hr>
 			<?php foreach ($cart as $go): ?>
 				
 				<div class="row" style="background-color: white; padding-left: 165px; padding-top: 20px;">

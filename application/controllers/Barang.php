@@ -13,6 +13,30 @@ class Barang extends CI_Controller {
 		$this->load->model('Barang_Model');
 	}
 
+	public function ins()
+	{
+		$this->load->view('header');
+		$this->load->view('insert');
+	}
+
+	public function insert_barang()
+	{
+		$data = array(
+                'nama_barang' => $this->input->post('nama') ,
+                // 'sem_date' => $date_formatted,
+                'harga' =>$this->input->post('harga'),           
+                'deskripsi' => $this->input->post('deskripsi'),
+                'kategori' => $this->input->post('kategori'),
+                // 'sem_img' => $image_path,
+                );
+
+		// var_dump($data);
+		// die();
+
+		$this->Barang_Model->add_barang($data);
+		redirect('home'); 
+	}
+
 	public function get_new()
 	{
 		$data['barang'] = $this->Barang_Model->get_new_barang();
