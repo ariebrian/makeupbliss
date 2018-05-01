@@ -46,15 +46,23 @@ foreach ($cart as $find) {
 						<li class="navlistright"><a href="#"><?php echo $go->qty ?></a></li>
 						<li class="navlistright"><a href="login.html"><?php echo $go->harga ?></a></li>
 						<li class="navlistright">
-							
-							<button type="submit" class="btn btn-danger" >Hapus</button>
+							<a href="<?php echo base_url('index.php/Barang/delete_cart/'.$go->id_cart); ?>">
+								
+								<button type="submit" class="btn btn-danger" >Hapus</button>
+							</a>
 						</li>
 					</ul>
 							
 				</div>
 			<?php endforeach ?>
-		</div>
+			<div class="row">
+				<div class="col-md-4">Total</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4"><?php echo $total; ?></div>
+			</div>
 
+		</div>
+		
 	</div>
 
 </body>

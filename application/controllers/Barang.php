@@ -128,6 +128,25 @@ class Barang extends CI_Controller {
 		$this->load->view('list', $data);
 	}
 
+	public function delete_cart($id)
+	{
+		$this->Barang_Model->delete_cart($id);
+		$uid = $this->session->userdata('id_user');
+		$data['cart'] = $this->Barang_Model->get_cart($uid);
+		$this->load->view('header');
+		$this->load->view('cart', $data);
+	}
+
+	public function delete_barang($id)
+	{
+		$this->Barang_Model->delete_barang($id);
+		$data['all'] = $this->Barang_Model->get_all();
+		$this->load->view('header');
+		$this->load->view('list', $data);
+	}
+
+	
+
 }
 
 /* End of file  */

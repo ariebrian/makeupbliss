@@ -88,7 +88,19 @@ class Barang_Model extends CI_Model {
 		return $query->result();
 	}
 
+	public function delete_barang($id)
+	{
+		$this->db->where('id_brg', $id);
+		$this->db->delete('barang');
+	}
 
+	public function delete_cart($id)
+	{
+		$this->db->where('id_cart', $id);
+		$this->db->delete('cart');	
+	}
+
+	
 
 }
 

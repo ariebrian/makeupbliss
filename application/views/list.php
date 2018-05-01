@@ -32,7 +32,10 @@
 					<ul class="navmainlist">
 						<li class="navlistright"><?php echo $brg->harga; ?></li>
 						<li class="navlistright">	
+							<a href="<?php echo base_url('index.php/Barang/delete_barang/'.$brg->id_brg); ?>">
+								
 							<button type="submit" class="btn btn-danger" >Hapus</button>
+							</a>
 						</li>
 						<li class="navlistright">	
 							<button type="submit" class="btn btn-success" >Update</button>
