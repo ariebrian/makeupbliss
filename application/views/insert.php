@@ -1,4 +1,7 @@
 <?php $this->load->helper('form'); ?>
+<?php if ($_SESSION['username'] !=='admin') {
+  redirect('home');
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

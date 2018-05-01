@@ -60,3 +60,4 @@ $route['login'] = 'User/log';
 $route['register'] = 'User/reg';
 $route['cart/(:num)'] = 'Barang/get_cart/$1';
 $route['admin'] = 'User/adm';
+$route['logout'] = 'User/logout';

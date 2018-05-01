@@ -14,8 +14,8 @@
 			</a>
 			<br>
 			<hr>
-			<a href="#">
-				<button class="btn btn-danger">Tambah Barang</button>
+			<a href="<?php echo base_url(); ?>index.php/Barang/get_all">
+				<button class="btn btn-danger">Daftar Barang</button>
 			</a>
 			<br>
 			<hr>

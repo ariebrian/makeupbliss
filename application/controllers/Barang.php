@@ -117,7 +117,16 @@ class Barang extends CI_Controller {
 		$this->load->view('detail', $data);
 	}
 
-	
+	public function get_all()
+	{
+		$data['all'] = $this->Barang_Model->get_all();
+		// echo "<pre>";
+		// print_r ($data);
+		// die();
+		// echo "</pre>";
+		$this->load->view('header');
+		$this->load->view('list', $data);
+	}
 
 }
 

@@ -60,6 +60,12 @@ class TestView extends CI_Controller {
 		$this->load->view('insert');
 	}
 
+	public function list()
+	{
+		$this->load->view('header');
+		$this->load->view('list');
+	}
+
 	public function lala()
 	{
 		echo base_url();

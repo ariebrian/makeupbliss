@@ -1,3 +1,6 @@
+<?php if (isset($_SESSION['username'])) {
+  redirect('home');
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

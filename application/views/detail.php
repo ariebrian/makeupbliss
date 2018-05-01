@@ -27,10 +27,15 @@
 						<button class="btn btn-danger" style="width: 100%; height: 80%">Wishlist</button>
 					</div>
 					<div class="col-md-3">
-						<a href="<?php echo base_url('index.php/Barang/add_cart/'.$barang[0]->id_brg) ?>">
-							
-							<button class="btn btn-danger" name="id" type="submit" style="width: 100%; height: 80%">Beli Sekarang</button>
-						</a>
+						<?php if (isset($_SESSION['username'])) : ?>
+							<a href="<?php echo base_url('index.php/Barang/add_cart/'.$barang[0]->id_brg) ?>">	
+								<button class="btn btn-danger" name="id" type="submit" style="width: 100%; height: 80%">Beli Sekarang</button>
+							</a>
+						<?php else: ?>
+							<a href="<?php echo base_url('index.php/login') ?>">	
+								<button class="btn btn-danger" name="id" type="submit" style="width: 100%; height: 80%">Beli Sekarang</button>
+							</a>
+						<?php endif ?>
 					</div>
 				</div>
 				<hr>

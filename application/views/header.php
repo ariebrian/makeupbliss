@@ -44,9 +44,12 @@
 					<ul class="navmainlist" style="float: right;">
 						<li class="navlistright"><a href="#"><?php echo $_SESSION['username']; ?></a></li>
 						<li class="navlistright">
-							<button type="submit" class="btn btn-danger">
-								Logout
-							</button>
+							<a href="<?php echo base_url(); ?>index.php/logout">
+								
+								<button type="submit" class="btn btn-danger">
+									Logout
+								</button>
+							</a>
 						</li>
 						<?php if ($_SESSION['username'] == 'admin') : ?>
 							<li class="navlistright">
